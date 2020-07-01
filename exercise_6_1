@@ -1,0 +1,153 @@
+class Animals:
+
+    def __init__(self, name, weight):
+        self.name = name
+        self.weight = weight
+
+    def to_eat(self):
+        self.state = 'eating'
+        return self.state
+
+    def get_voice(self):
+        self.state = 'voice'
+        return self.state
+
+class Goose(Animals):
+    name = 'Гусь'
+    sound = 'га-га-га'
+
+    def egg_collection(self):
+        self.state = 'get eggs'
+        return self.state
+
+class Cow(Animals):
+
+    name = 'Корова'
+    sound = 'му-му'
+
+    def milk(self):
+        self.state = 'get milk'
+        return self.state
+
+class Sheep(Animals):
+    name = 'Овца'
+    sound = 'бе-бе'
+
+    def cut(self):
+        self.state = 'to cut'
+        return self.state
+
+class Chiken(Animals):
+
+    name = 'Курица'
+    sound = 'ко-ко'
+
+    def egg_collection(self):
+        self.state = 'get eggs'
+        return self.state
+
+class Goat(Animals):
+
+    name = 'Коза'
+    sound = 'ме-ме'
+
+    def milk(self):
+        self.state = 'get milk'
+        return self.state
+
+class Duck(Animals):
+
+    name = 'Утка'
+    sound = 'кря-кря'
+
+    def egg_collection(self):
+        self.state = 'get eggs'
+        return self.state
+
+goose1 = Goose('Серый', 5)
+print(goose1.to_eat())
+print(goose1.egg_collection())
+print(goose1.sound)
+print()
+
+goose2 = Goose('Белый', 6)
+print(goose2.to_eat())
+print(goose2.egg_collection())
+print(goose2.sound)
+print()
+
+cow1 = Cow('Манька', 65)
+print(cow1.to_eat())
+print(cow1.milk())
+print(cow1.sound)
+print()
+
+goat1 = Goat('Рога', 15)
+print(goat1.to_eat())
+print(goat1.milk())
+print(goat1.sound)
+print()
+
+goat2 = Goat('Копыта', 17)
+print(goat2.to_eat())
+print(goat2.milk())
+print(goat2.sound)
+print()
+
+sheep1 = Sheep('Барашек', 25)
+print(sheep1.to_eat())
+print(sheep1.cut())
+print(sheep1.sound)
+print()
+
+sheep2 = Sheep('Кудрявый', 20)
+print(sheep2.to_eat())
+print(sheep2.cut())
+print(sheep2.sound)
+print()
+
+chicken1 = Chiken('Ко-Ко', 4)
+print(chicken1.to_eat())
+print(chicken1.egg_collection())
+print(chicken1.sound)
+print()
+
+chicken2 = Chiken('Кукареку', 5)
+print(chicken2.to_eat())
+print(chicken2.egg_collection())
+print(chicken2.sound)
+print()
+
+duck1 = Duck('Кряква', 8)
+print(duck1.to_eat())
+print(duck1.egg_collection())
+print(duck1.sound)
+print()
+
+list_animals_weight = []
+list_animals_weight.append(duck1.weight)
+list_animals_weight.append(chicken1.weight)
+list_animals_weight.append(chicken2.weight)
+list_animals_weight.append(sheep1.weight)
+list_animals_weight.append(sheep2.weight)
+list_animals_weight.append(goat1.weight)
+list_animals_weight.append(goat2.weight)
+list_animals_weight.append(cow1.weight)
+list_animals_weight.append(goose1.weight)
+list_animals_weight.append(goose2.weight)
+# print(list_animals_weight)
+
+print(f'Общий вес всех животных на ферме составляет {sum(list_animals_weight)} кг.')
+
+count = 0
+id = 0
+for animal in list_animals_weight:
+    # print(animal)
+    if animal > count:
+        count += 1
+        count = animal
+        id = animal
+print(f'Вес самого тяжелого животного на ферме составляет {id} кг.')
+
+
+
